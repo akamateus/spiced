@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-granite: rgb(37 38 41 / 100%);
+  --color-nemo: #ff4a11;
+  --color-foam: rgb(255 255 255);
+  --letter-spacing: 0.025em;
+  --padinngs: 16px;
+  --margins: 0 auto;
+  --min-width: min(1000px, 100%);
+  --letter-spacing: 0.025em;
+  --border-radius: 4px;
+/* var(--); */
+}
+
+
 body {
   margin: 0;
   font-family: system-ui;
@@ -11,33 +25,33 @@ body {
 }
 
 header {
-  background: rgb(37 38 41 / 100%);
+  background: var(--color-granite);
 }
 
 h1 {
   text-align: center;
-  color: white;
+  color: var(--color-foam);
   line-height: 1.4;
   margin: 0;
-  letter-spacing: 0.025em;
+  letter-spacing: var(--letter-spacing);
   text-transform: uppercase;
-  padding-block: 16px;
+  padding-block: var(--padinngs);
 }
 
 h2 {
-  letter-spacing: 0.025em;
+  letter-spacing: var(--letter-spacing);
 }
 
 strong {
-  color: #ff4a11;
+  color: var(--color-nemo);
 }
 
 section {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
-  padding: 16px;
-  width: min(1000px, 100%);
+  padding: var(--padinngs);
+  width: var(--min-width);
   margin: 0 auto;
 }
 
@@ -51,18 +65,18 @@ img {
 }
 
 figure {
-  width: min(100%, 400px);
+  width: var(--min-width);
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin: 0;
   padding: 10px;
-  background-color: #ff4a11ff;
-  border-radius: 4px;
+  background-color: var(--color-nemo);
+  border-radius: var(--border-radius);
 }
 
 figcaption {
-  color: rgb(255 255 255);
+  color: var(--color-foam);
 }
 
 nav {
@@ -75,25 +89,25 @@ a {
   display: inline-block;
   font-size: smaller;
   padding: 8px;
-  border-radius: 4px;
-  background-color: hsl(14 100% 53%);
+  border-radius: var(--border-radius);
+  background-color: var(--color-nemo);
   color: #fff;
 }
 
 a:hover,
 a:focus-visible {
-  background-color: rgb(37 38 41);
+  background-color: var(--color-granite);
   text-decoration: none;
 }
 
 mark {
-  background-color: rgb(255 74 17);
-  color: #ffffff;
-  border-radius: 4px;
-  letter-spacing: 0.025em;
+  background-color: var(--color-nemo);
+  color: var(--color-foam);
+  border-radius: var(--border-radius);
+  letter-spacing: var(--letter-spacing);
 }
 
 ::selection {
-  background-color: #252629;
-  color: #ff4a11;
+  background-color: var(--color-granite);
+  color:: var(--color-nemo);
 }
