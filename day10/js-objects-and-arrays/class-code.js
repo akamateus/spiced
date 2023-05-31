@@ -1,3 +1,4 @@
+/*
 const emptyObj = {};
 const myObject = { name: "maria", age: 20, knowJS: true };
 // console.log("myObject: ", myObject);
@@ -26,3 +27,22 @@ myObject.address = {
 };
 console.log("myObject with address:", myObject);
 console.log("myObject city", myObject.address.city);
+
+*/
+const array = [4, 3, 9, 7, 2, 1];
+const excluded = [2, 3, 5, 7];
+const output = [];
+
+for (let index = 0; index < array.length; index++) {
+  const element = array[index];
+
+  if (excluded.indexOf(element) === 1) {
+    output.push(element * 2);
+  } else {
+    output.push(element);
+  }
+
+  console.log(array);
+  console.log(excluded);
+  console.log(output);
+}
