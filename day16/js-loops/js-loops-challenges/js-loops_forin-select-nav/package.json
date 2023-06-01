@@ -1,7 +1,7 @@
 {
-  "name": "js-loops_stars",
+  "name": "js-loops_forin-select-nav",
   "version": "0.0.0-unreleased",
-  "description": "JS Loops: stars",
+  "description": "For in loop challenge with select navigation",
   "main": "index.html",
   "scripts": {
     "lint": "npx eslint .",
@@ -9,6 +9,5 @@
   },
   "nf": {
     "template": "html-css-js-static"
-  },
-  "private": true
+  }
 }
