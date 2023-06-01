@@ -1,0 +1,147 @@
+:root {
+  /* Color Variables */
+
+  --color-highlight: tomato;
+  --color-granite: #2055f5;
+  --color-foam: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+img {
+  width: 300px;
+  height: auto;
+}
+body {
+  margin: 0;
+  font-family: system-ui;
+  background-color: var(--color-granite);
+  padding: 20px;
+}
+
+main {
+  display: grid;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 1rem;
+  color: var(--color-highlight);
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  color: var(--color-granite);
+}
+
+button {
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 3rem;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+section {
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.button--color {
+  color: var(--color-foam);
+  background-color: var(--color-granite);
+  transition: all 0.5s ease;
+}
+
+.button--color:hover {
+  background-color: var(--color-highlight);
+}
+
+.button--scale {
+  background-color: #ccccd4;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px;
+  transition: 0.5s ease;
+}
+
+.button--scale:active {
+  transform: scale(0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.button--shadow {
+  background-color: var(--color-highlight);
+  color: var(--color-foam);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transition: background-color 0.5s ease-in-out, box-shadow 1s ease;
+}
+
+.button--shadow:hover {
+  background-color: var(--color-granite);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.button--position {
+  position: relative;
+  align-self: start;
+  background-color: var(--color-granite);
+  color: var(--color-foam);
+}
+
+.position--0 {
+  left: 0;
+  transition: left 0.5s ease;
+}
+
+.position--1 {
+  left: 200px;
+  transition: left 0.5s ease;
+}
+
+.position--2 {
+  left: 70%;
+  transition: left 0.5s ease;
+}
+
+.fun {
+  position: relative;
+  animation: rotate 2s linear infinite;
+  width: 200px;
+  height: 200px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    scale: 0;
+    background-color: tomato;
+  }
+  25% {
+    transform: rotate(90deg);
+    background-color: yellow;
+  }
+  50% {
+    transform: rotate(180deg);
+    background-color: pink;
+    scale: 10;
+  }
+  75% {
+    transform: rotate(270deg);
+    background-color: blue;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: tomato;
+    scale: 0;
+  }
+}
