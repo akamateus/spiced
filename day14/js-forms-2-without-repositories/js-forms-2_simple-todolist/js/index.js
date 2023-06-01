@@ -2,12 +2,28 @@ console.clear();
 
 const form = document.querySelector('[data-js="form"]');
 const todoList = document.querySelector('[data-js="todoList"]');
-const headline = document.getElementById("headline");
-const task = document.getElementById("task");
+const headlineElement = document.getElementById("headline");
+
+function addNewListEntry(formObj) {
+  const newLi = document.createElement("li");
+  const newHeadLine = document.createElement("h2");
+  const newTask = document.createElement("p");
+
+  const property = "task";
+
+  newHeadLine.textContent = formObj.headLine;
+  newTask.textContent = formObj["task"];
+
+  newLi.append(newHeadLine, newTask);
+
+  todoList.append(newLi);
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log("Headline: ", headline.value);
-  console.log(`Task: ${task.value}`);
-  e.target.reset();
-  e.target.elements.headline.focus();
+
+  const formData = new FormData(form);
+  const formObj = Object.fromEntries(formData);
+
+  addNewListEntry(headLine, formObj);
 });
