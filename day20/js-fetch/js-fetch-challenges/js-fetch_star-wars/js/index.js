@@ -37,10 +37,36 @@ const EXAMPLE_DATA = {
 const firstCard = Card(EXAMPLE_DATA);
 renderElement(firstCard);
 
-fetchDataAndRender();
-
 // --v-- your code below this line --v--
 
-function fetchDataAndRender() {
-  fetch(); // ?
+const url = "https://swapi.dev/api/people";
+async function fetchDataAndRender() {
+  try {
+    const response = await fetch(url);
+    if (response.ok) {
+      // Success (Good Response)
+      const data = await response.json();
+      console.log(data);
+
+      data.results.forEach((newCard) => {
+        let newElement = Card(newCard);
+        renderElement(newElement);
+      });
+
+      //accessing specific object
+      // console.log(data.results[2].eye_color);
+    } else {
+      // Failure (Bad Response)
+      console.error("Bad Response");
+    }
+  } catch (error) {
+    // Failure (Network error, etc)
+    console.error("An Error occurred");
+  }
 }
+fetchDataAndRender();
+
+// function fetchDataAndRender() {
+//   fetch(); // ?
+// }
+// fetchDataAndRender();

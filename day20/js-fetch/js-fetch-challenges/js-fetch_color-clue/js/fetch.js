@@ -1,4 +1,4 @@
-import { setColorToGuess, getRandomHexCode } from "./utils.js";
+import { setColorToGuess, getRandomHexCode, colorToGuess } from "./utils.js";
 
 export async function fetchNewColor() {
   const hexCode = getRandomHexCode();
@@ -18,6 +18,25 @@ export async function fetchNewColor() {
    */
 
   // --v-- your code here --v--
+  async function fetchData() {
+    try {
+      const response = await fetch(colorApiUrl);
+      if (response.ok) {
+        // Success (Good Response)
+        const data = await response.json();
+        console.log(data.name.value);
+        console.log(data);
+        setColorToGuess(data.name.closest_named_hex, data.name.value);
+      } else {
+        // Failure (Bad Response)
+        console.error("Bad Response");
+      }
+    } catch (error) {
+      // Failure (Network error, etc)
+      console.error("An Error occurred");
+    }
+  }
+  fetchData();
 
   // --^-- your code here --^--
 }
