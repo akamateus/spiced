@@ -3,11 +3,11 @@ export function getFirstNames(people) {
 }
 
 export function getFullNames(people) {
-  return people.map((person) => person.firstName, " ", person.lastName);
+  return people.map((person) => `${person.firstName} ${person.lastName}`);
 }
 
 export function getNameAndAge(people) {
-  return people.map((person) => person.firstName, " ", person.age);
+  return people.map((person) => `${person.firstName} ${person.age}`);
 }
 
 export function getPeopleByAge(people, age) {
@@ -15,9 +15,8 @@ export function getPeopleByAge(people, age) {
 }
 
 export function getPeopleNamesOlderThan(people, age) {
-  return people
-    .filter((person) => person.age > age)
-    .map((person) => person.firstName);
+  const oldPeople = people.filter((person) => person.age > age);
+  return getFullNames(oldPeople);
 }
 
 export function getPeopleByLastName(people, lastName) {
@@ -33,11 +32,6 @@ export function isAnyoneOlderThan(people, age) {
 }
 
 export function getFullNamesSortedByAge(people) {
-  return people
-    .map((person) => ({
-      fullName: person.firstName + " " + person.lastName,
-      age: person.age,
-    }))
-    .sort((a, b) => a.age - b.age)
-    .map((person) => person.fullName);
+  const sortedPeople = people.sort((a, b) => a.age - b.age);
+  return getFullNames(sortedPeople);
 }
