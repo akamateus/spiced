@@ -1,5 +1,5 @@
 export default function Counter({ onAddPerson, onRemovePerson }) {
-  const [people, setPeople] = useState(0);
+  // const [people, setPeople] = useState(0);
   return (
     <>
       <h2>How many people would you like to visit us with?</h2>
