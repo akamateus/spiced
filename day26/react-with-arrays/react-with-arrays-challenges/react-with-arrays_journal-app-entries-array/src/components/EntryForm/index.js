@@ -12,7 +12,7 @@ export default function EntryForm() {
         </div>
         <div className="entry-form__field">
           <label htmlFor="notes">Notes</label>
-          <textarea name="notes" id="notes" rows="4" />
+          <textarea naweme="notes" id="notes" rows="4" />
         </div>
         <div className="entry-form__button-wrapper">
           <Button type="submit">Create</Button>

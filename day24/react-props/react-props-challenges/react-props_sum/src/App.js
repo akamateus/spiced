@@ -13,7 +13,8 @@ function Sum({ valueA, valueB }) {
 export default function App() {
   return (
     <div>
-      <Sum valueA={64} valueB={14} />
+      {" "}
+      <Sum valueA={23} valueB={22}></Sum>
     </div>
   );
 }
